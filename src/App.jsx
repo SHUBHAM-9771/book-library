@@ -19,7 +19,7 @@ const App = () => {
           element: <Allbooks />,
         },
         {
-          path: "/single-books",
+          path: "/single-books/:id",
           element: <Singlebooks />,
         },
       ],

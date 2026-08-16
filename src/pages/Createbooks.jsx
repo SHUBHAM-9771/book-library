@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../style/Createbooks.css";
 
 const Createbooks = () => {
   const [userData, setUserData] = useState({
@@ -12,7 +13,6 @@ const Createbooks = () => {
 
     setUserData({
       ...userData,
-
       [name]: value,
     });
   }
@@ -26,47 +26,54 @@ const Createbooks = () => {
       publishedDate: "",
     });
   }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="bookName">Book Name</label>
-        <input
-          type="text"
-          id="bookName"
-          name="bookName"
-          placeholder="Enter book name"
-          value={userData.bookName}
-          onChange={handleuserData}
-        />
-      </div>
+    <div className="create-book-container">
+      <form className="create-book-form" onSubmit={handleSubmit}>
+        <h2 className="form-title">Create Book</h2>
 
-      <div>
-        <label htmlFor="authorName">Author Name</label>
-        <input
-          type="text"
-          id="authorName"
-          name="authorName"
-          placeholder="Enter author name"
-          value={userData.authorName}
-          onChange={handleuserData}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="bookName">Book Name</label>
+          <input
+            type="text"
+            id="bookName"
+            name="bookName"
+            placeholder="Enter book name"
+            value={userData.bookName}
+            onChange={handleuserData}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="publishedDate">Published Date</label>
-        <input
-          type="date"
-          id="publishedDate"
-          name="publishedDate"
-          value={userData.publishedDate} 
-          onChange={handleuserData}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="authorName">Author Name</label>
+          <input
+            type="text"
+            id="authorName"
+            name="authorName"
+            placeholder="Enter author name"
+            value={userData.authorName}
+            onChange={handleuserData}
+          />
+        </div>
 
-      <div>
-        <button type="submit">Create Book</button>
-      </div>
-    </form>
+        <div className="form-group">
+          <label htmlFor="publishedDate">Published Date</label>
+          <input
+            type="date"
+            id="publishedDate"
+            name="publishedDate"
+            value={userData.publishedDate}
+            onChange={handleuserData}
+          />
+        </div>
+
+        <div className="button-container">
+          <button className="create-book-btn" type="submit">
+            Create Book
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
