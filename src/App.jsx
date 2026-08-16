@@ -11,7 +11,7 @@ const App = () => {
       element: <Navbar />,
       children: [
         {
-          index: trues,
+          index: true,
           element: <Createbooks />,
         },
         {
